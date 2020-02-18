@@ -18,3 +18,9 @@ x <- read_excel("class_enrollment_summary_by_term_2.13.20.xlsx",skip=3)%>%
   filter(! is.na(course_name))
 
 ```
+
+```{r}
+x%>%
+  group_by(course_department)%>%
+  summarize(total=sum(total))
+```
